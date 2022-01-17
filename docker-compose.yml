@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  webapp:
+    depends_on:
+      - webserver
+    ports:
+      - 3000:3000
+    build: 
+      context: ./webapp
+      dockerfile: dockerfile
+    image: webapp:latest
+  webserver:
+    image: webserver:latest
+    ports:
+      - 33000:3000
